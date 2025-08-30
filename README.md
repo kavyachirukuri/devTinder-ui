@@ -32,6 +32,7 @@
 - New Page - See all my Connection Requests
 - Feature - Accept/Reject connection request
 - Send/Ignore the user card from the feed
+- Signup New User
 
 Body
 NavBar
