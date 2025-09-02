@@ -50,6 +50,7 @@ Router=/profile => Profile
 - Install Node version 22.18.0
 - Git clone
 - Frontend
+
   - npm install -> dependencies install
   - npm run build
   - sudo apt update
@@ -59,3 +60,37 @@ Router=/profile => Profile
   - Copy code from dist(build files) to /var/www/html
   - sudo scp -r dist/\* /var/www/html/
   - Enable port :80 on your instance
+
+- Backend
+  - updated DB password
+  - allowed ec2 instance public IP on mongodb server (u r whitelisting the ip)
+  - npm install pm2 -g
+  - pm2 start npm --name "devTinder-backend" -- start
+  - pm2 logs
+  - pm2 list, pm2 flush <name> , pm2 stop <name> , pm2 delete <name>
+  - config nginx - /etc/nginx/sites-available/default
+  - restart nginx - sudo systemctl restart nginx
+  - Modify the BASEURL in front end project to /api
+
+# nginx config:
+
+Frontend = http://43.204.96.49/
+Backend = http://43.204.96.49:7777/
+
+Domain name = devTinder.com => 43.204.96.49
+
+Frontend = devTinder.com
+Backend = devTinder.com:7777 => devTinder.com/api
+
+server_name 43.204.96.49;
+
+# NGINX CONFIG:
+
+location /api/ {
+proxy_pass http://127.0.0.1:7777/;
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection 'upgrade';
+proxy_set_header Host $host;
+proxy_cache_bypass $http_upgrade;
+}
