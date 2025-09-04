@@ -94,3 +94,12 @@ proxy_set_header Connection 'upgrade';
 proxy_set_header Host $host;
 proxy_cache_bypass $http_upgrade;
 }
+
+# Adding a custom Domain name
+
+- purchased domain name from godaddy
+- signup on cloudflare and add a new domain name
+- change the name servers on godaddy and point it to cloudfare
+- wait for some time till your name servers are updated ~15 mins
+- DNS record: A devTinder.in 43.204.96.49
+- Enable SSL for website
