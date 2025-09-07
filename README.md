@@ -103,3 +103,49 @@ proxy_cache_bypass $http_upgrade;
 - wait for some time till your name servers are updated ~15 mins
 - DNS record: A devTinder.in 43.204.96.49
 - Enable SSL for website
+
+# Sending Emails via SES
+
+- Create a IAM user
+- Give Access to AmazonSESFullAccess
+- Amazon SES: Create an Identity
+- Verify your domain name
+- Verify an email address identity
+- Install AWS SDK - v3
+- Code Example https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/javascriptv3/example_code/ses#code-examples
+- Setup SesClient
+- Access Credentials should be created in IAM under SecurityCredentials Tab
+- Add the credentials to the env file
+- Write code for SESClinet
+- Write code for Sending email address
+- Make the email dynamic by passing more params to the run function
+
+# Scheduling cron jobs in NodeJS
+
+- Installing node-cron
+- Learning about cron expressions syntax - crontab.guru
+- Schedule a job
+- date-fns
+- Find all the unique email Id who have got connection Request in previous day
+- Send Email
+- Explore queue mechanism to send bulk emails
+- Amazon SES Bulk Emails
+- Make sendEmail function dynamic
+- bee-queue & bull npm packages
+
+# Razorpay Payment Gateway Integration
+
+- Sign up on Razorpay & complete KYC
+- Created an UI for premium page
+- Created an API for create order in backend
+- added my key and secret in env file
+- Initialized Razorpay in utils
+- creating order on Razorpay
+- create Schema and model
+- saved the order in payments collection
+- make the API dynamic
+- Setup Razorpay webhook on your live API
+- Ref - https://github.com/razorpay/razorpay-node/tree/master/documents
+- Ref - https://razorpay.com/docs/payments/server-integration/nodejs/integration-steps/#integrate-with-razorpay-payment-gateway
+- Ref - https://razorpay.com/docs/webhooks/validate-test/
+- Ref - https://razorpay.com/docs/webhooks/payloads/payments/
